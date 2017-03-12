@@ -1,14 +1,20 @@
 import React from 'react';
-import { Router, Route } from 'react-router';
-import createHashHistory from 'history/createHashHistory';
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom'
 import IndexPage from './routes/IndexPage';
-
-const history = createHashHistory();
+// import LoginPage from './routes/LoginPage';
+import RegisterPage from './routes/RegisterPage';
 
 export default function() {
   return (
-    <Router history={history}>
-      <Route path="/" component={IndexPage}/>
+    <Router>
+      <div>
+        <Route exact path="/" component={IndexPage} />
+        <Route path="/register" component={RegisterPage} />
+        {/*<Route path="/login" component={LoginPage} />*/}
+      </div>
     </Router>
   );
 };

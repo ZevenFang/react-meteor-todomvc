@@ -30,7 +30,10 @@ class IndexPage extends Component {
   };
 
   clearCompleted = () => {
-    // reacteor.remove('todo',id);
+    let {todo} = this.props;
+    todo.map(v=>(
+      v.completed && Todo.remove(v._id)
+    ));
   };
 
   render(){
@@ -138,7 +141,7 @@ class Footer extends Component {
 
 export default createContainer(props=>{
   Meteor.subscribe('todo');
-  let todo = Todo.find();
+  let todo = Todo.find({}, {sort: {createdAt: -1}});
   return {
     todo
   }
