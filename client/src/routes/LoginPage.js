@@ -1,13 +1,11 @@
 import React, {Component} from 'react';
-import {Link, hashHistory} from 'dva/router';
+import {Link} from 'react-router-dom';
+import Meteor from 'react-web-meteor';
 
 class LoginPage extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   signIn = () => {
+    let {history} = this.props;
     let username = this.refs.username.value;
     let password = this.refs.password.value;
     if (username.trim().length===0){
@@ -17,13 +15,12 @@ class LoginPage extends Component {
       alert('Require password.');
     }
     else {
-      reacteor.loginWithPassword({
-        username, password
-      }).then(res=>{
-        hashHistory.push('/');
-      }).catch(({reason})=> {
-        alert(reason);
-      })
+      Meteor.loginWithPassword(
+        username, password, err=>{
+          if (err) alert(err.reason);
+          else history.push('/');
+        }
+      );
     }
   };
 
