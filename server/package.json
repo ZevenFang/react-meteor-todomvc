@@ -2,7 +2,8 @@
   "name": "server",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run",
+    "build": "meteor build --architecture=os.linux.x86_64 ../build"
   },
   "dependencies": {
     "babel-runtime": "^6.20.0",
