@@ -141,7 +141,8 @@ class Footer extends Component {
 
 export default createContainer(props=>{
   Meteor.subscribe('todo');
-  let todo = Todo.find({}, {sort: {createdAt: -1}});
+  let userId = Meteor.userId();
+  let todo = Todo.find({userId}, {sort: {createdAt: -1}});
   return {
     todo
   }
