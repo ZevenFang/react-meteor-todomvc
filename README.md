@@ -1,5 +1,5 @@
 # react-meteor-todomvc
-A realtime todomvc built by react-web-meteor with meteor account system.
+A realtime todomvc built by [react-web-meteor](https://github.com/ZevenFang/react-meteor) with meteor account system.
 
 ## Preview
 ![preview](https://raw.github.com/ZevenFang/dva-react-meteor-todo/master/screenshot/preview.gif)
