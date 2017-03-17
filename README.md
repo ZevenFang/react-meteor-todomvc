@@ -7,7 +7,7 @@ A realtime todomvc built by [react-web-meteor](https://github.com/ZevenFang/reac
 ## Getting started
 Please be sure you have installed [meteor](https://www.meteor.com/install).
 ```shell
-cd server && meteor
-cd client && npm start
+cd server && meteor npm install && meteor
+cd client && npm install && npm start
 ```
 
